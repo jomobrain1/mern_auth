@@ -10,6 +10,15 @@ databaseConnection();
 //Middleware
 app.use(express.json());
 
+//Root Endpoint
+app.get("/", (req, res) => {
+  res.json({
+    name: "MERN api",
+    version: "v1",
+    status: "Active",
+  });
+});
+
 app.listen(PORT, () => {
   console.log("Server is running in port:", PORT);
 });
