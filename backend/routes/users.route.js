@@ -9,10 +9,11 @@ const {
   changePassword,
 } = require("../controllers/users.controller");
 const { isAuthenticated } = require("../middlewares/auth.middleware");
+const { validateUser, userSchema } = require("../validators/user.validator");
 
 const router = express.Router();
 
-router.post("/auth/register", registerUser);
+router.post("/auth/register", validateUser(userSchema), registerUser);
 router.post("/auth/verify", verifyUser);
 router.post("/auth/login", loginUser);
 router.post("/auth/logout", isAuthenticated, logoutUser);
