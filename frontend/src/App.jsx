@@ -8,6 +8,12 @@ import Verify from "./pages/Verify";
 import Navbar from "./components/Navbar";
 import LoginEloop from "./pages/eloop/EloopLogin";
 import ProtectedRoute from "./components/ProtectedRoute";
+import SignupEloop from "./pages/Eloop/EloopSignup";
+import ForgotPassword from "./pages/ForgotPassword";
+import DashboardEloop from "./pages/Eloop/ELoopDashboard";
+import VerifyOtp from "./pages/VerifyOtp";
+import VerifyOTP from "./pages/VerifyOtp";
+import ChangePassword from "./pages/ChangePassword";
 
 const router = createBrowserRouter([
   {
@@ -37,8 +43,28 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
+    path: "/forgot-password",
+    element: <ForgotPassword />,
+  },
+  {
+    path: "/verify-otp/:email",
+    element: <VerifyOTP />,
+  },
+  {
+    path: "/change-password/:email",
+    element: <ChangePassword />,
+  },
+  {
     path: "/elooplogin",
     element: <LoginEloop />,
+  },
+  {
+    path: "/eloopsignup",
+    element: <SignupEloop />,
+  },
+  {
+    path: "/edash",
+    element: <DashboardEloop />,
   },
 ]);
 
