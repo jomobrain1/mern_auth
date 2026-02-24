@@ -3,8 +3,12 @@ import React from "react";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
+import { getData } from "./context/userContext";
 
 const Hero = () => {
+  const { user } = getData();
+  //   console.log("User info", user.data);
+
   const navigate = useNavigate();
   return (
     <div className="relative w-full md:h-[700px] h-screen bg-green-50 overflow-hidden">
@@ -14,7 +18,7 @@ const Hero = () => {
             {/* {user && (
               <h1 className="font-bold text-2xl">Welcome {user.username}</h1>
             )} */}
-            Welcome Beast
+            Welcome {user.data.username}
             <div className="space-y-2">
               <Badge
                 variant="secondary"
